@@ -33,34 +33,8 @@ tests/
 luhn.test.ts
 index.ts
 
-
-## API Endpoint
-
-### POST /api/validate-card
-http://localhost:8080/api/validate-card
-Request Body
-```json
-{
-  "cardNumber": "4539578763621486"
-};
-
-//Response
-{
-  "status": "True",
-  "data": {
-    "cardNumber": "4539578763621486",
-    "valid": true
-  }
-}; 
-
-//Error Handling Test
-{
-  "status": "False",
-  "message": "CardNumber should be between 12 and 19 digits"
-};
-
 How to run the project
--Install dependencies
+-Make sure you install dependencies
  npm install 
 
 -Run the server
@@ -70,6 +44,103 @@ npm run dev
 
 -Run test
  npm test
+
+
+## API Endpoint Using PostMan
+### POST /api/validate-card
+http://localhost:8080/api/validate-card
+Request Body
+```json
+ Request:
+{
+    "cardNumber": ""
+};
+
+
+ Response:
+{
+    "status": "false",
+    "message": "CardNumber is required"
+};
+ Request:
+{
+    "cardNumber": null
+};
+ Response:
+ {
+    "status": "false",
+    "message": "CardNumber is required"
+};
+
+ Request:
+{
+  "cardNumber": "4539578763621486"
+};
+
+ Response:
+{
+  "status": "True",
+  "data": {
+    "cardNumber": "4539578763621486",
+    "valid": true
+  }
+}; 
+
+//Error Handling Test
+ Request:
+{
+    "cardNumber": null
+}
+ Response:
+{
+    "status": "false",
+    "message": "CardNumber is required"
+}
+ Request:
+{
+    "cardNumber":"45395787636214864539578763621486"
+};
+ Response:
+{
+  "status": "False",
+  "message": "CardNumber should be between 12 and 19 digits"
+}
+
+  Request:
+{
+    "cardNumber":4539578763621486
+}
+
+ Response:
+ {
+    "status": "false",
+    "message": "CardNumber must be a string"
+}
+  Request:
+{
+    "cardNumber":"45395 7876 3621 486"
+}
+
+Response: Clean Data response
+{
+    "status": "true",
+    "data": {
+        "cardNumber": "4539578763621486",
+        "Valid": true
+    }
+};
+ Request: Contain symbols
+{
+    "cardNumber":"45395$*78763621&48)()6"
+}
+ Response: Return Clean response
+{
+    "status": "true",
+    "data": {
+        "cardNumber": "4539578763621486",
+        "Valid": true
+    }
+}
 
 -How this project works
 1. The API receives a card number from the client

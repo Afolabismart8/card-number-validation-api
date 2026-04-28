@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-     "dev": "ts-node-dev --respawn src/index.ts",
-     "test": "jest"
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "dotenv": "^17.4.2",
     "express": "^5.2.1"
   },
   "devDependencies": {
