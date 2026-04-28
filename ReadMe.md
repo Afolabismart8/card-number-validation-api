@@ -45,6 +45,22 @@ npm run dev
 -Run test
  npm test
 
+ ## Testing
+This project uses **Jest** for unit testing.
+### Run Tests
+```bash
+npm test
+Result:
+ PASS  src/test/luhn.test.ts
+  Luhn Algorithm test
+    √ should return true for a valid card number (3 ms)
+    √ should return false for an invalid card number (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        1.958 s, estimated 4 s
+Ran all test suites.
 
 ## API Endpoint Using PostMan
 ### POST /api/validate-card
