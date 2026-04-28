@@ -37,6 +37,7 @@ How to run the project
 -clone my repo https://github.com/Afolabismart8/card-number-validation-api.git 
  git clone then you add the provided url
 -Make sure you install dependencies
+ Also add dotenv for PORT
  npm install 
 
 -Run the server
