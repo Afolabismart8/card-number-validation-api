@@ -21,16 +21,16 @@ The API accepts a card number, sanitizes it, validates it, and returns whether i
 
 ## 📁 Project Structure
 src/
-controllers/
-card.controller.ts
+ controllers/
+   card.controller.ts
 services/
-card.service.ts
+   card.service.ts
 utils/
-luhn.ts
+   luhn.ts
 routes/
-card.route.ts
+   card.route.ts
 tests/
-luhn.test.ts
+l  uhn.test.ts
 index.ts
 
 How to run the project
