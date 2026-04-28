@@ -5,7 +5,7 @@ export const validateCard = (req:Request, res:Response) => {
     try { const {cardNumber} = req.body;
 
     //Check if cardNumber exist
-    if(!cardNumber) 
+    if(cardNumber === null || cardNumber === undefined ) 
         { return res.status(400).json({status:"false", message:"CardNumber is required"})};
 
     //check if cardNumber is a String
